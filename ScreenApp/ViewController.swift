@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let nameLabel = UILabel()
+    let messageLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,23 @@ class ViewController: UIViewController {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(nameLabel)
+        
+        messageLabel.text = "Jerin's here hahaahhaha"
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.textColor = .white
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(messageLabel)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            messageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
             ])
     }
 }
